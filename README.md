@@ -1,48 +1,9 @@
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/joryirving/home-ops-pi/main/docs/src/assets/icons/kah-logo.png" align="center" width="144px" height="144px"/>
-
-
-### <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="16" height="16"> My Home Operations Repository <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="16" height="16">
-
-_... managed with Flux, Renovate, and GitHub Actions_ <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f916/512.gif" alt="🤖" width="16" height="16">
-
-</div>
-
-<div align="center">
-
-[![Discord](https://img.shields.io/discord/673534664354430999?style=for-the-badge&label&logo=discord&logoColor=white&color=blue)](https://discord.gg/home-operations)&nbsp;&nbsp;
-[![Talos](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjoryirving%2Fhome-ops-pi%2Fmain%2Fkubernetes%2Fmain%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=talosVersion&style=for-the-badge&logo=talos&logoColor=white&color=blue&label=%20)](https://www.talos.dev/)&nbsp;&nbsp;
-[![Kubernetes](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjoryirving%2Fhome-ops-pi%2Fmain%2Fkubernetes%2Fmain%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=kubernetesVersion&style=for-the-badge&logo=kubernetes&logoColor=white&color=blue&label=%20)](https://www.talos.dev/)&nbsp;&nbsp;
-[![Renovate](https://img.shields.io/github/actions/workflow/status/joryirving/joryirving/scheduled-renovate.yaml?branch=main&label=&logo=renovatebot&style=for-the-badge&color=blue)](https://github.com/joryirving/joryirving/actions/workflows/scheduled-renovate.yaml)
-
-</div>
-
-<div align="center">
-
-[![Home-Internet](https://img.shields.io/endpoint?url=https%3A%2F%2Fhealthchecks.io%2Fbadge%2Ff0288b6a-305e-4084-b492-bb0a54%2FKkxSOeO1-2.shields&style=for-the-badge&logo=ubiquiti&logoColor=white&label=Home%20Internet)](https://status.jory.dev)&nbsp;&nbsp;
-[![Status-Page](https://img.shields.io/endpoint?url=https%3A%2F%2Fstatus.jory.dev%2Fapi%2Fv1%2Fendpoints%2Fmain-external_gatus%2Fhealth%2Fbadge.shields&style=for-the-badge&logo=statuspage&logoColor=white&label=Status%20Page)](https://status.jory.dev/endpoints/external_gatus)&nbsp;&nbsp;
-[![Plex](https://img.shields.io/endpoint?url=https%3A%2F%2Fstatus.jory.dev%2Fapi%2Fv1%2Fendpoints%2Fmain-external_plex%2Fhealth%2Fbadge.shields&style=for-the-badge&logo=plex&logoColor=white&label=Plex)](https://status.jory.dev/endpoints/external_plex)
-
-</div>
-
-<div align="center">
-
-[![Age-Days](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_age_days&style=flat-square&label=Age)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Uptime-Days](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_uptime_days&style=flat-square&label=Uptime)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Node-Count](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_node_count&style=flat-square&label=Nodes)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Pod-Count](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_pod_count&style=flat-square&label=Pods)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![CPU-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_cpu_usage&style=flat-square&label=CPU)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Memory-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_memory_usage&style=flat-square&label=Memory)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Power-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_power_usage&style=flat-square&label=Power)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Alerts](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.jory.dev%2Fcluster_alert_count&style=flat-square&label=Alerts)](https://github.com/kashalls/kromgo)
-</div>
-
----
-
 ## Overview
 
-This is a monorepository is for my home kubernetes clusters.
+This is a test repository is for my home kubernetes clusters.
+
+Please see my home-prod repo at [home-ops](https://github.com/joryirving/home-ops)
+
 I try to adhere to Infrastructure as Code (IaC) and GitOps practices using tools like [Terraform](https://www.terraform.io/), [Kubernetes](https://kubernetes.io/), [Flux](https://github.com/fluxcd/flux2), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Actions](https://github.com/features/actions).
 
 The purpose here is to learn k8s, while practicing Gitops.
@@ -52,8 +13,6 @@ The purpose here is to learn k8s, while practicing Gitops.
 ## ⛵ Kubernetes
 
 My Kubernetes clusters are deployed with [Talos](https://www.talos.dev). One is a low-power utility cluster, running important services, and the other is a semi-hyper-converged cluster, workloads and block storage are sharing the same available resources on my nodes while I have a separate NAS with ZFS for NFS/SMB shares, bulk file storage and backups.
-
-There is a template over at [onedr0p/cluster-template](https://github.com/onedr0p/cluster-template) if you want to try and follow along with some of the practices I use here.
 
 ### Core Components
 
@@ -65,8 +24,6 @@ There is a template over at [onedr0p/cluster-template](https://github.com/onedr0
 - [ingress-nginx](https://github.com/kubernetes/ingress-nginx/): ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer
 - [rook-ceph](https://rook.io/): Cloud native distributed block storage for Kubernetes
 - [sops](https://toolkit.fluxcd.io/guides/mozilla-sops/): managed secrets for Talos, which are committed to Git
-- [spegel](https://github.com/XenitAB/spegel): stateless cluster local OCI registry mirror
-- [tofu-controller](https://github.com/weaveworks/tf-controller): additional Flux component used to run Terraform from within a Kubernetes cluster.
 - [volsync](https://github.com/backube/volsync): backup and recovery of persistent volume claims
 
 ### GitOps
@@ -83,28 +40,14 @@ This Git repository contains the following directories under [Kubernetes](./kube
 
 ```sh
 📁 kubernetes
-├── 📁 main             # main cluster
+├── 📁 pi             # main cluster
 │   ├── 📁 apps         # applications
 │   ├── 📁 bootstrap    # bootstrap procedures
 │   ├── 📁 flux         # core flux configuration
-├── 📁 shared           # shared cluster resources
-│   ├── 📁 components   # re-useable components
-│   ├── 📁 repositories # common reusable repositories
-└── 📁 utility          # utility cluster
-    ├── 📁 apps         # applications
-    ├── 📁 bootstrap    # bootstrap procedures
-    └── 📁 flux         # core flux configuration
+└── 📁 shared           # shared cluster resources
+    ├── 📁 components   # re-useable components
+    └── 📁 repositories # common reusable repositories
 ```
-
-### Networking
-
-<details>
-  <summary>Click to see a high-level network diagram</summary>
-
-  <img src="https://raw.githubusercontent.com/joryirving/home-ops-pi/main/docs/src/assets/network-topology.png" align="center" alt="dns"/>
-</details>
-
----
 
 ## ☁️ Cloud Dependencies
 
@@ -130,28 +73,15 @@ In my cluster there are two instances of [ExternalDNS](https://github.com/kubern
 
 ## 🔧 Hardware
 
-### Main Kubernetes Cluster
+### Pi Kubernetes Cluster
 
-| Name  | Device       | CPU       | OS Disk   | Data Disk | RAM  | OS    | Purpose           |
-|-------|--------------|-----------|-----------|-----------|------|-------|-------------------|
-| Ayaka | Dell 7080mff | i5-10500T | 480GB SSD | 1TB NVME  | 64GB | Talos | k8s control-plane |
-| Eula  | Dell 7080mff | i7-10700T | 480GB SSD | 1TB NVME  | 64GB | Talos | k8s control-plane |
-| Ganyu | Dell 3080mff | i5-10500T | 500GB SSD | 1TB NVME  | 64GB | Talos | k8s control-plane |
-| HuTao | Dell 3080mff | i5-10500T | 480GB SSD | 1TB NVME  | 64GB | Talos | k8s worker        |
-| Navia | Dell 3080mff | i5-10500T | 240GB SSD | 1TB NVME  | 64GB | Talos | k8s worker        |
-| Yelan | Dell 3080mff | i5-10500T | 240GB SSD | 1TB NVME  | 64GB | Talos | k8s worker        |
+| Name    | Device        | CPU        | OS Disk    | Data Disk | RAM | OS    | Purpose           |
+|---------|---------------|------------|------------|-----------|-----|-------|-------------------|
+| Citlali | Raspberry Pi5 | Cortex A76 | 250GB NVMe | N/A       | 8GB | Talos | k8s control-plane |
+| Layla   | Raspberry Pi5 | Cortex A76 | 512GB NVMe | N/A       | 8GB | Talos | k8s worker       |
 
-Total CPU: 76 threads
-Total RAM: 384GB
-
-### Utility Kubernetes Cluster
-
-| Name     | Device     | CPU           | OS Disk   | Data Disk  | RAM  | OS    | Purpose           |
-|----------|------------|---------------|-----------|------------|------|-------|-------------------|
-| Celestia | Bosgame P1 | Ryzen 7 5700U | 480GB SSD | 500GB NVME | 32GB | Talos | k8s control-plane |
-
-Total CPU: 16 threads
-Total RAM: 32GB
+Total CPU: 8 threads
+Total RAM: 16GB
 
 ### Supporting Hardware
 
@@ -172,19 +102,3 @@ Total RAM: 32GB
 | Back-UPS 600                | Network - UPS    |
 | Unifi USW-Enterprise-24-PoE | Server - Switch  |
 | Tripp Lite 1500             | Server - UPS     |
-
----
-
-## ⭐ Stargazers
-
-<div align="center">
-
-[![Star History Chart](https://api.star-history.com/svg?repos=joryirving/home-ops-pi&type=Date)](https://star-history.com/#joryirving/home-ops-pi&Date)
-
-</div>
-
----
-
-## 🤝 Thanks
-
-Big shout out to original [cluster-template](https://github.com/onedr0p/cluster-template), and the [Home Operations](https://discord.gg/home-operations) Discord community. Be sure to check out [kubesearch.dev](https://kubesearch.dev/) for ideas on how to deploy applications or get ideas on what you may deploy.
