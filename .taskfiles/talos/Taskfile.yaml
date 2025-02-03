@@ -13,7 +13,7 @@ tasks:
       - test -f {{.BOOTSTRAP_TALOS_DIR}}/talsecret.sops.yaml
 
   apply-node:
-    desc: Apply Talos config to a node [CLUSTER=pi5] [HOSTNAME=required]
+    desc: Apply Talos config to a node [CLUSTER=pi] [HOSTNAME=required]
     dotenv: ['{{.CLUSTER_DIR}}/cluster.env']
     cmds:
       # - task: down
@@ -31,7 +31,7 @@ tasks:
       - test -f {{.BOOTSTRAP_TALOS_DIR}}/clusterconfig/talosconfig
 
   apply-cluster: ## This isn't working on utility cluster
-    desc: Apply the Talos config on all nodes for an existing cluster [CLUSTER=pi5]
+    desc: Apply the Talos config on all nodes for an existing cluster [CLUSTER=pi]
     vars:
       HOSTNAMES:
         sh: kubectl get nodes --output=jsonpath='{.items[*].metadata.name}' --context {{.CLUSTER}}
@@ -64,7 +64,7 @@ tasks:
       - { msg: "Argument (CLUSTER) is required", sh: "test -n {{.CLUSTER}}" }
 
   reboot-node:
-    desc: Reboot Talos on a single node [CLUSTER=pi5] [HOSTNAME=required]
+    desc: Reboot Talos on a single node [CLUSTER=pi] [HOSTNAME=required]
     cmds:
       - task: down
       - talosctl --nodes {{.HOSTNAME}} reboot --talosconfig {{.BOOTSTRAP_TALOS_DIR}}/clusterconfig/talosconfig
@@ -80,7 +80,7 @@ tasks:
       - which talosctl
 
   reboot-cluster:
-    desc: Reboot Talos across the whole cluster [CLUSTER=pi5]
+    desc: Reboot Talos across the whole cluster [CLUSTER=pi]
     prompt: This will reboot all of the cluster nodes. Are you sure you want to continue?
     requires:
       vars: [CLUSTER]
@@ -103,7 +103,7 @@ tasks:
       - test -f {{.BOOTSTRAP_TALOS_DIR}}/clusterconfig/talosconfig
 
   shutdown-cluster:
-    desc: Shutdown Talos across the whole cluster [CLUSTER=pi5]
+    desc: Shutdown Talos across the whole cluster [CLUSTER=pi]
     prompt: Shutdown the Talos cluster '{{.CLUSTER}}' ... continue?
     cmd: talosctl shutdown --nodes {{.HOSTNAMES}} --force
     vars:
@@ -119,7 +119,7 @@ tasks:
       - which talosctl
 
   kubeconfig:
-    desc: Generate the kubeconfig for a Talos cluster [CLUSTER=pi5]
+    desc: Generate the kubeconfig for a Talos cluster [CLUSTER=pi]
     cmd: talosctl kubeconfig --nodes {{.TALOS_CONTROLLER}} --force --force-context-name {{.CLUSTER}} {{.CLUSTER_DIR}} --talosconfig {{.BOOTSTRAP_TALOS_DIR}}/clusterconfig/talosconfig
     vars:
       TALOS_CONTROLLER:

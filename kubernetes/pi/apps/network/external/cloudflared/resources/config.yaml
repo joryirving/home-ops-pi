@@ -1,6 +1,6 @@
 ---
 originRequest:
-  originServerName: external-pi5.jory.dev
+  originServerName: external-pi.jory.dev
 
 ingress:
   - hostname: jory.dev

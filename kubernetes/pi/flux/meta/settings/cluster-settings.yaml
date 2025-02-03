@@ -4,8 +4,8 @@ kind: ConfigMap
 metadata:
   name: cluster-settings
 data:
-  ## pi5 cluster settings
-  CLUSTER: pi5
+  ## pi cluster settings
+  CLUSTER: pi
   PVC_VOLSYNC_STORAGECLASS: local-hostpath
   VOLSYNC_SNAPSHOTCLASS: csi-local-hostpath
   VOLSYNC_CACHE_SNAPSHOTCLASS: local-hostpath

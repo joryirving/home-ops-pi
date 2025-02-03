@@ -58,4 +58,4 @@ spec:
         ingress:
           enabled: true
           className: internal
-          hosts: ["hubble-pi5.jory.dev"]
+          hosts: ["hubble-pi.jory.dev"]

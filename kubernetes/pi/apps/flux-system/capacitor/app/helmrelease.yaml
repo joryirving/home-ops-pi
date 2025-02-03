@@ -60,7 +60,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: "{{ .Release.Name }}-pi5.jory.dev"
+          - host: "{{ .Release.Name }}-pi.jory.dev"
             paths:
               - path: /
                 service:

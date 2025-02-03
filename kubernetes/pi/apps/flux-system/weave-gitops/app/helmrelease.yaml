@@ -31,7 +31,7 @@ spec:
       enabled: true
       className: internal
       hosts:
-        - host: gitops-pi5.jory.dev
+        - host: gitops-pi.jory.dev
           paths:
             - path: /
               pathType: Prefix

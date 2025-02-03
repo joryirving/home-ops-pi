@@ -7,7 +7,7 @@ on:
     inputs:
       clusterName:
         description: Cluster Name
-        default: pi5
+        default: pi
         required: true
       helmRepoNamespace:
         description: Helm Repository Namespace
@@ -23,7 +23,7 @@ on:
 jobs:
   sync:
     name: Helm Repository Sync
-    runs-on: [home-ops-runner]
+    runs-on: [home-ops-pi-runner]
     steps:
       - name: Configure 1password
         uses: 1password/load-secrets-action/configure@v2

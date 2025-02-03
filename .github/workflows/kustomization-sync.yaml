@@ -6,15 +6,15 @@ on:
   workflow_dispatch:
   push:
     branches: ["development"]
-    paths: ["kubernetes/pi5/**"]
+    paths: ["kubernetes/pi/**"]
 
 jobs:
   sync:
     name: Flux Kustomization Sync
-    runs-on: [home-ops-runner]
+    runs-on: [home-ops-pi-runner]
     strategy:
       matrix:
-         cluster: ["pi5"]
+         cluster: ["pi"]
     steps:
       - name: Configure 1password
         uses: 1password/load-secrets-action/configure@v2

@@ -10,7 +10,7 @@ Since I'm using a DiY PiKVM V2, there's a few notes:
 <details>
   <summary>Click to see the Diy PiKVM!</summary>
 
-  <img src="https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/pikvm.png" align="center" width="400px" alt="rack"/>
+  <img src="https://raw.githubusercontent.com/joryirving/home-ops-pi/main/docs/src/assets/pikvm.png" align="center" width="400px" alt="rack"/>
 </details>
 
 ## Load TESmart KVM

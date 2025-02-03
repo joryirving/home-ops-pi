@@ -12,7 +12,7 @@ spec:
     - name: node-feature-discovery
       namespace: kube-tools
   interval: 30m
-  path: ./kubernetes/pi5/apps/kube-tools/system-upgrade-controller/app
+  path: ./kubernetes/pi/apps/kube-tools/system-upgrade-controller/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -35,7 +35,7 @@ spec:
     - name: system-upgrade-controller
       namespace: kube-tools
   interval: 30m
-  path: ./kubernetes/pi5/apps/kube-tools/system-upgrade-controller/plans
+  path: ./kubernetes/pi/apps/kube-tools/system-upgrade-controller/plans
   postBuild:
     substitute:
       TALOS_SCHEMATIC_ID: placeholder

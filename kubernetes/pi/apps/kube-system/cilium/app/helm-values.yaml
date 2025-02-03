@@ -16,7 +16,7 @@ cgroup:
   hostRoot: /sys/fs/cgroup
 cluster:
   id: 1
-  name: pi5
+  name: pi
 cni:
   exclusive: false
 devices: end+

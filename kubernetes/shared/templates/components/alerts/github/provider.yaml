@@ -6,6 +6,6 @@ metadata:
   name: github
 spec:
   type: github
-  address: https://github.com/joryirving/home-ops
+  address: https://github.com/joryirving/home-ops-pi
   secretRef:
     name: github-token
