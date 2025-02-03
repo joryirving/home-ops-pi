@@ -13,9 +13,9 @@ tasks:
   push-pi:
     desc: Push pi kubeconfig/talosconfig to OnePassword
     cmds:
-      - op item edit kubernetes KUBECONFIG_pi[text]="$(cat {{.ROOT_DIR}}/kubernetes/pi/kubeconfig)" &>/dev/null
-      - op item edit kubernetes TALOSCONFIG_pi[text]="$(cat {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/talosconfig)" &>/dev/null
-      - op item edit kubernetes TALOSCONFIG_pi_BASE64[text]="$(cat {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/talosconfig | base64 -w 0)" &>/dev/null
+      - op item edit kubernetes KUBECONFIG_PI[text]="$(cat {{.ROOT_DIR}}/kubernetes/pi/kubeconfig)" &>/dev/null
+      - op item edit kubernetes TALOSCONFIG_PI[text]="$(cat {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/talosconfig)" &>/dev/null
+      - op item edit kubernetes TALOSCONFIG_PI_BASE64[text]="$(cat {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/talosconfig | base64 -w 0)" &>/dev/null
     preconditions:
       - op user get --me
 
@@ -23,7 +23,7 @@ tasks:
     desc: Pull Kubeconfig from OnePassword
     cmds:
       - mkdir -p {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/
-      - op item get kubernetes --fields label=KUBECONFIG_pi | tr -d '"' > {{.ROOT_DIR}}/kubernetes/pi/kubeconfig # pi kubeconfig
-      - op item get kubernetes --fields label=TALOSCONFIG_pi | tr -d '"' > {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/talosconfig # pi talosconfig
+      - op item get kubernetes --fields label=KUBECONFIG_PI | tr -d '"' > {{.ROOT_DIR}}/kubernetes/pi/kubeconfig # pi kubeconfig
+      - op item get kubernetes --fields label=TALOSCONFIG_PI | tr -d '"' > {{.ROOT_DIR}}/kubernetes/pi/bootstrap/talos/clusterconfig/talosconfig # pi talosconfig
     preconditions:
       - op user get --me

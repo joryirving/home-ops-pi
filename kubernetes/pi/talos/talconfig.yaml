@@ -19,7 +19,7 @@ cniConfig:
   name: none
 
 nodes:
-  - hostname: "layla"
+  - hostname: "citlali"
     ipAddress: "10.69.1.221"
     installDisk: /dev/nvme0n1
     controlPlane: true
@@ -30,7 +30,7 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.69.1.220"
-  - hostname: "citlali"
+  - hostname: "layla"
     ipAddress: "10.69.1.222"
     installDisk: /dev/nvme0n1
     controlPlane: false

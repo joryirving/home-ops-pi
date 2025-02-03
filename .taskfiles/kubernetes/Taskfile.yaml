@@ -96,9 +96,9 @@ tasks:
   upgrade-arc:
     desc: Upgrade the ARC [CLUSTER=pi]
     cmds:
-      - helm -n actions-runner-system uninstall home-ops-pi-runner || true
+      - helm -n actions-runner-system uninstall home-ops-runner || true
       - helm -n actions-runner-system uninstall actions-runner-controller || true
-      - flux delete -s -n actions-runner-system helmrelease home-ops-pi-runner || true
+      - flux delete -s -n actions-runner-system helmrelease home-ops-runner || true
       - flux delete -s -n actions-runner-system helmrelease actions-runner-controller || true
       - sleep 5
       - flux -n flux-system reconcile ks actions-runner-controller

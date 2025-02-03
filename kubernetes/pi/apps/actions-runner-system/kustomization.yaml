@@ -2,11 +2,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: kube-system
+namespace: actions-runner-system
 resources:
-  - ./cilium/ks.yaml
-  - ./coredns/ks.yaml
-  - ./metrics-server/ks.yaml
+  - ./actions-runner-controller/ks.yaml
 components:
   - ../../flux/meta/components/cluster-vars
   - ../../../shared/meta/components/alerts
