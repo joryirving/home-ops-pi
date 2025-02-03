@@ -20,9 +20,6 @@ area/terraform:
   - changed-files:
       - any-glob-to-any-file: terraform/**/*
 # Cluster
-cluster/main:
+cluster/pi:
   - changed-files:
-      - any-glob-to-any-file: kubernetes/main/**/*
-cluster/utility:
-  - changed-files:
-      - any-glob-to-any-file: kubernetes/utility/**/*
+      - any-glob-to-any-file: kubernetes/pi/**/*
