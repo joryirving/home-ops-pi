@@ -58,4 +58,4 @@ spec:
         ingress:
           enabled: true
           className: internal
-          hosts: ["hubble-pi.${SECRET_DOMAIN}"]
+          hosts: ["hubble-test.${SECRET_DOMAIN}"]

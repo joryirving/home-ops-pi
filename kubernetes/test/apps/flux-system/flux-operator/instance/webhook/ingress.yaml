@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: external
   rules:
-    - host: flux-webhook-pi.${SECRET_DOMAIN}
+    - host: flux-webhook-test.${SECRET_DOMAIN}
       http:
         paths:
           - path: /hook/

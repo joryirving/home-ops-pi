@@ -41,7 +41,7 @@ spec:
       enabled: true
       ingressClassName: internal
       hosts:
-        - host: headlamp-pi.${SECRET_DOMAIN}
+        - host: headlamp-test.${SECRET_DOMAIN}
           paths:
             - path: /
               type: Prefix
