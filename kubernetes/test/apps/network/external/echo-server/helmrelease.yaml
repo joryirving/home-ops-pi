@@ -94,7 +94,7 @@ spec:
       app:
         className: external
         hosts:
-          - host: "{{ .Release.Name }}-pi.jory.dev"
+          - host: "{{ .Release.Name }}-test.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
