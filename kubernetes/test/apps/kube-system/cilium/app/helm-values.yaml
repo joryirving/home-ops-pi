@@ -4,7 +4,7 @@ bandwidthManager:
   enabled: false
   bbr: true
 bpf:
-  datapathMode: netkit
+  # datapathMode: netkit
   hostLegacyRouting: true
   masquerade: true
   tproxy: true
@@ -19,7 +19,7 @@ cluster:
   name: pi
 cni:
   exclusive: false
-devices: end+
+devices: enp+
 enableRuntimeDeviceDetection: true
 endpointRoutes:
   enabled: true
