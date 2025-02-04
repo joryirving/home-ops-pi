@@ -18,7 +18,6 @@ tasks:
       - test -f {{.TALOS_DIR}}/clusterconfig/talosconfig
       - test -f {{.SHARED_DIR}}/bootstrap/helmfile.yaml
       - test -f {{.SHARED_DIR}}/bootstrap/templates/resources.yaml.j2
-      - test -f {{.SHARED_DIR}}/bootstrap/templates/wipe-rook.yaml.gotmpl
       - which curl jq helmfile kubectl op talosctl
 
   gen-secrets:
@@ -76,13 +75,7 @@ tasks:
       - until kubectl wait nodes --for=condition=Ready=False --all --timeout=10m; do sleep 5; done
       - op run --env-file {{.SHARED_DIR}}/bootstrap/.secrets.env --no-masking -- minijinja-cli {{.SHARED_DIR}}/bootstrap/templates/resources.yaml.j2 | kubectl apply --server-side --filename -
       - helmfile --quiet --file {{.SHARED_DIR}}/bootstrap/helmfile.yaml apply --skip-diff-on-install --suppress-diff --kube-context {{.CLUSTER}}
-      - '{{if eq .NODE_COUNT 1}}talosctl --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig reboot -n {{.TALOS_CONTROLLER}}{{end}}'
-    vars:
-      TALOS_CONTROLLER:
-        sh: talosctl --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig config info --output json | jq --raw-output '.endpoints[]'
     env:
-      NODE_COUNT:
-        sh: talosctl --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig config info --output json | jq --raw-output '.nodes | length'
       VAULT: kubernetes # ¯\_(ツ)_/¯
       CLUSTER: '{{.CLUSTER}}'
       SHARED_DIR: '{{.SHARED_DIR}}'
