@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: cert-manager
 components:
   - ../../../infrastructure/meta/components/global-vars
-  - ../../../infrastructure/meta/components/namespace
+  # - ../../../infrastructure/meta/components/namespace
   - ../../../infrastructure/meta/components/sops
-resources: []
+resources:
+  - ./namespace.yaml
