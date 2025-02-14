@@ -28,7 +28,7 @@ spec:
       replicaCount: 1
       service:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: &hostname external.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/hostname: &hostname external-${CLUSTER}.${SECRET_DOMAIN}
           lbipam.cilium.io/ips: 10.69.2.232
       ingressClassResource:
         name: external
