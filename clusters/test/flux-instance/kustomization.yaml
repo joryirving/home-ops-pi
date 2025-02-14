@@ -5,7 +5,6 @@ kind: Kustomization
 resources:
   - ./helmrelease.yaml
   - ./prometheusrule.yaml
-  - ./webhook
 configMapGenerator:
   - name: flux-instance-helm-values
     files:
