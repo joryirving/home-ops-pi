@@ -10,6 +10,7 @@ resources:
   - ../../base/external-secrets/external-secrets/ks.yaml
   - ../../base/external-secrets/onepassword.ks.yaml
   - ../../base/flux-system
+  - ../../base/flux-system/flux-operator/ks.yaml
   - ../../base/flux-system/headlamp/ks.yaml
   - ../../base/kube-system
   - ../../base/kube-system/cilium/ks.yaml
