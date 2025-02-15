@@ -13,11 +13,10 @@ spec:
   interval: 10m0s
   path: ./apps/test
   patches:
-    - patch: |-
-        apiVersion: kustomize.toolkit.fluxcd.io/v1
+    - target:
         kind: Kustomization
-        metadata:
-          name: not-used
+        labelSelector: 'kustomize.toolkit.fluxcd.io/name=cluster-apps'
+      patch: |-
         spec:
           decryption:
             provider: sops
