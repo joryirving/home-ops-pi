@@ -11,13 +11,13 @@ spec:
     secretRef:
       name: sops-age
   interval: 30m
-  path: ./clusters/test
+  path: ./clusters/test/flux-instance
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
   # Flux repositories under this need flux-system hardcoded as namespace for Renovate lookups
-  targetNamespace: *namespace
+  targetNamespace: flux-system
   timeout: 5m
   wait: true
