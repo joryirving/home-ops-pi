@@ -13,10 +13,11 @@ spec:
   interval: 10m0s
   path: ./apps/test
   patches:
-    - target:
+    - patch: |-
+        apiVersion: kustomize.toolkit.fluxcd.io/v1
         kind: Kustomization
-        labelSelector: 'kustomize.toolkit.fluxcd.io/name=cluster-apps'
-      patch: |-
+        metadata:
+          name: not-used
         spec:
           decryption:
             provider: sops
@@ -36,6 +37,9 @@ spec:
               - kind: Secret
                 name: cluster-secrets-shared
                 optional: true
+      target:
+        group: kustomize.toolkit.fluxcd.io
+        kind: Kustomization
   prune: true
   sourceRef:
     kind: GitRepository
