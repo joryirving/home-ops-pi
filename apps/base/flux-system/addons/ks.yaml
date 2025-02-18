@@ -11,6 +11,14 @@ spec:
       app.kubernetes.io/name: *app
   interval: 30m
   path: ./apps/base/flux-system/addons/webhook
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-settings
+        optional: true
+      - kind: Secret
+        name: cluster-secrets
+        optional: true
   prune: false # never should be deleted
   sourceRef:
     kind: GitRepository
