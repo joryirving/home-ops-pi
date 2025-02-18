@@ -24,6 +24,8 @@ spec:
             secretRef:
               name: sops-age
           postBuild:
+            substitute:
+              CLUSTER: test
             substituteFrom:
               - kind: ConfigMap
                 name: cluster-settings

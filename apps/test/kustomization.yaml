@@ -30,3 +30,11 @@ resources:
   - ../base/storage/local-path-provisioner/ks.yaml
   - ../base/storage/snapshot-controller/ks.yaml
   - ../base/storage/volsync/ks.yaml
+patches:
+  - target:
+      kind: Kustomization
+      labelSelector: "base-overlay=true"
+    patch: |-
+      - op: add
+        path: "/components/0"
+        value: "../../../infrastructure/test/meta/components/cluster-vars"
