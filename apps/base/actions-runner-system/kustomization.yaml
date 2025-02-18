@@ -1,0 +1,11 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: actions-runner-system
+components:
+  - ../../../infrastructure/test/meta/components/cluster-vars
+  - ../../../infrastructure/base/meta/components/global-vars
+  - ../../../infrastructure/base/meta/components/namespace
+  - ../../../infrastructure/base/meta/components/sops
+resources: []

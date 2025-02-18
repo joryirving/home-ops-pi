@@ -3,8 +3,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../base/actions-runner-system
-  - ../base/actions-runner-system/actions-runner-controller/ks.yaml
   - ../base/cert-manager
   - ../base/cert-manager/cert-manager/ks.yaml
   - ../base/default
@@ -22,7 +20,6 @@ resources:
   - ../base/kube-tools
   - ../base/kube-tools/node-feature-discovery/ks.yaml
   - ../base/kube-tools/reloader/ks.yaml
-  - ../base/kube-tools/system-upgrade-controller/ks.yaml
   - ../base/network
   - ../base/network/external/ks.yaml
   - ../base/network/internal/ks.yaml
