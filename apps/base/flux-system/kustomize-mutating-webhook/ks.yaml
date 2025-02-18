@@ -3,15 +3,15 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app flux-repositories
+  name: &app kustomize-mutating-webhook
   namespace: &namespace flux-system
 spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
   interval: 30m
-  path: ./infrastructure/repositories/
-  prune: false # never should be deleted
+  path: ./apps/base/flux-system/kustomize-mutating-webhook/app
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
