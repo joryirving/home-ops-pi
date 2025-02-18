@@ -2,9 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "description": "Separate PRs for Pi cluster",
-      "matchFileNames": ["**/kubernetes/pi/**"],
+      "description": "Separate PRs for pi cluster",
+      "matchFileNames": ["**/clusters/pi/**"],
       "additionalBranchPrefix": "pi-"
+    },
+    {
+      "description": "Separate PRs for test cluster",
+      "matchFileNames": ["**/clusters/test/**"],
+      "additionalBranchPrefix": "test-"
     }
   ]
 }
