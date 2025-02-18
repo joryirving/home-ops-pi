@@ -46,15 +46,15 @@ operator:
   prometheus:
     enabled: true
     serviceMonitor:
-      enabled: false
+      enabled: true
   dashboards:
     enabled: true
     annotations:
       grafana_folder: Network
 prometheus:
-  enabled: false
+  enabled: true
   serviceMonitor:
-    enabled: false
+    enabled: true
     trustCRDsExist: true
 dashboards:
   enabled: true

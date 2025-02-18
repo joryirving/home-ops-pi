@@ -6,7 +6,7 @@ wait_for_crds() {
         "ciliumloadbalancerippools.cilium.io"
     )
     for crd in "${crds[@]}"; do
-        until kubectl get crd "$crd" &>/dev/null; do
+        until kubectl --context ${CLUSTER} get crd "$crd" &>/dev/null; do
             sleep 5
         done
     done
@@ -27,7 +27,7 @@ apply_cluster_configmap() {
         --context ${CLUSTER} \
         --namespace=flux-system \
         --server-side \
-        ----filename \
+        --filename \
         "${CLUSTER_DIR}/secrets/cluster-settings.yaml"
 }
 
