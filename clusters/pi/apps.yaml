@@ -26,13 +26,7 @@ spec:
           postBuild:
             substituteFrom:
               - kind: ConfigMap
-                name: cluster-settings
-                optional: true
-              - kind: ConfigMap
                 name: cluster-settings-shared
-                optional: true
-              - kind: Secret
-                name: cluster-secrets
                 optional: true
               - kind: Secret
                 name: cluster-secrets-shared
@@ -40,9 +34,6 @@ spec:
       target:
         group: kustomize.toolkit.fluxcd.io
         kind: Kustomization
-  postBuild:
-    substitute:
-      CLUSTER: pi
   prune: true
   sourceRef:
     kind: GitRepository
