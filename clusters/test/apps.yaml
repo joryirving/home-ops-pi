@@ -24,8 +24,27 @@ spec:
             secretRef:
               name: sops-age
           postBuild:
-            substitute:
-              CLUSTER: test
+            substituteFrom:
+              - kind: ConfigMap
+                name: cluster-settings-shared
+                optional: true
+              - kind: Secret
+                name: cluster-secrets-shared
+                optional: true
+      target:
+        group: kustomize.toolkit.fluxcd.io
+        kind: Kustomization
+    - patch: |-
+        apiVersion: kustomize.toolkit.fluxcd.io/v1
+        kind: Kustomization
+        metadata:
+          name: not-used
+        spec:
+          decryption:
+            provider: sops
+            secretRef:
+              name: sops-age
+          postBuild:
             substituteFrom:
               - kind: ConfigMap
                 name: cluster-settings
@@ -42,9 +61,7 @@ spec:
       target:
         group: kustomize.toolkit.fluxcd.io
         kind: Kustomization
-  postBuild:
-    substitute:
-      CLUSTER: test
+        namespace: flux-system
   prune: true
   sourceRef:
     kind: GitRepository
