@@ -40,6 +40,9 @@ spec:
       target:
         group: kustomize.toolkit.fluxcd.io
         kind: Kustomization
+  postBuild:
+    substitute:
+      CLUSTER: test
   prune: true
   sourceRef:
     kind: GitRepository
