@@ -5,8 +5,10 @@
       "customType": "regex",
       "description": ["Process YAML custom dependencies"],
       "fileMatch": [
-        "(^|/)kubernetes/.+\\.env$",
-        "(^|/)kubernetes/.+\\.ya?ml$"
+        "(^|/)apps/.+\\.env$",
+        "(^|/)clusters/.+\\.env$",
+        "(^|/)apps/.+\\.ya?ml$",
+        "(^|/)clusters/.+\\.ya?ml$"
       ],
       "matchStrings": [
         // # renovate: datasource=github-releases depName=k3s-io/k3s
