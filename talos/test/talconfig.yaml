@@ -131,7 +131,7 @@ patches:
   #       devices.system.cpu.cpu11.cpufreq.energy_performance_preference: balance_power
   #       devices.system.cpu.cpu12.cpufreq.energy_performance_preference: balance_power
   #       devices.system.cpu.cpu13.cpufreq.energy_performance_preference: balance_power
-  #       devices.system.cpu.cpu14.cpufreq.energy_performance_preference: balance_power
+  #       devices.system.cpu.cpu14.cpufreq.energy_performance_preferenc`1e: balance_power
   #       devices.system.cpu.cpu15.cpufreq.energy_performance_preference: balance_power
 
   # # Mount democratic-csi storage in kubelet

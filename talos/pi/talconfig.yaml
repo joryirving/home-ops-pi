@@ -88,7 +88,7 @@ patches:
       kubelet:
         nodeIP:
           validSubnets:
-            - "10.69.1.0/24"
+            - "10.69.2.0/24"
 
   # Enable MutatingAdmissionPolicy
   - |-
@@ -208,7 +208,7 @@ controlPlane:
           extraArgs:
             listen-metrics-urls: http://0.0.0.0:2381
           advertisedSubnets:
-            - "10.69.1.0/24"
+            - "10.69.2.0/24"
 
     # Disable default API server admission plugins.
     - |-
