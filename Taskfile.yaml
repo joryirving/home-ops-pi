@@ -6,10 +6,11 @@ set: [pipefail]
 shopt: [globstar]
 
 vars:
-  CLUSTER: '{{.CLUSTER | default "pi"}}'
-  CLUSTER_DIR: '{{.ROOT_DIR}}/kubernetes/{{.CLUSTER}}'
-  SHARED_DIR: '{{.ROOT_DIR}}/kubernetes/shared'
-  TALOS_DIR: '{{.CLUSTER_DIR}}/talos'
+  APPS_DIR: '{{.ROOT_DIR}}/apps/base'
+  CLUSTER: '{{.CLUSTER | default "test"}}'
+  CLUSTER_DIR: '{{.ROOT_DIR}}/clusters/{{.CLUSTER}}'
+  BOOTSTRAP_DIR: '{{.ROOT_DIR}}/bootstrap'
+  TALOS_DIR: '{{.ROOT_DIR}}/talos/{{.CLUSTER}}'
 
 env:
   MINIJINJA_CONFIG_FILE: '{{.ROOT_DIR}}/.minijinja.toml'

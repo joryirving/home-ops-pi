@@ -6,21 +6,21 @@ talosVersion: v1.9.3
 kubernetesVersion: v1.32.1
 
 clusterName: &cluster pi
-endpoint: https://10.69.1.220:6443
+endpoint: https://10.69.2.120:6443
 clusterPodNets:
   - "10.42.0.0/16"
 clusterSvcNets:
   - "10.43.0.0/16"
 additionalApiServerCertSans: &sans
-  - "10.69.1.220"
+  - "10.69.2.120"
   - 127.0.0.1 # KubePrism
 additionalMachineCertSans: *sans
 cniConfig:
   name: none
 
 nodes:
-  - hostname: "citlali"
-    ipAddress: "10.69.1.221"
+  - hostname: "xilonen"
+    ipAddress: "10.69.2.121"
     installDisk: /dev/nvme0n1
     controlPlane: true
     networkInterfaces:
@@ -29,9 +29,9 @@ nodes:
         dhcp: true
         mtu: 1500
         vip:
-          ip: "10.69.1.220"
-  - hostname: "layla"
-    ipAddress: "10.69.1.222"
+          ip: "10.69.2.120"
+  - hostname: "mualani"
+    ipAddress: "10.69.2.122"
     installDisk: /dev/nvme0n1
     controlPlane: false
     networkInterfaces:

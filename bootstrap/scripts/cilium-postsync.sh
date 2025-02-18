@@ -18,7 +18,7 @@ apply_kustomize_config() {
         --server-side \
         --field-manager=kustomize-controller \
         --kustomize \
-        "${CLUSTER_DIR}/apps/kube-system/cilium/config"
+        "${APPS_DIR}/kube-system/cilium/config"
 }
 main() {
     wait_for_crds
