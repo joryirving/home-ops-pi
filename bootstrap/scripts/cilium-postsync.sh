@@ -11,6 +11,7 @@ wait_for_crds() {
         done
     done
 }
+
 apply_kustomize_config() {
     kubectl apply \
         --context ${CLUSTER} \
@@ -20,8 +21,20 @@ apply_kustomize_config() {
         --kustomize \
         "${APPS_DIR}/kube-system/cilium/config"
 }
+
+apply_cluster_configmap() {
+    kubectl apply \
+        --context ${CLUSTER} \
+        --namespace=flux-system \
+        --server-side \
+        ----filename \
+        "${CLUSTER_DIR}/secrets/cluster-settings.yaml"
+}
+
 main() {
     wait_for_crds
     apply_kustomize_config
+    apply_cluster_configmap
 }
+
 main

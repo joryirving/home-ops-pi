@@ -23,12 +23,6 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  values:
-    certManager:
-      enabled: true
-    configMaps:
-      - create: false
-        name: cluster-settings
-    secrets:
-      - create: false
-        name: cluster-secrets
+  valuesFrom:
+    - kind: ConfigMap
+      name: kustomize-mutating-webhook-helm-values
