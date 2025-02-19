@@ -52,9 +52,9 @@ spec:
               - kind: ConfigMap
                 name: cluster-settings-shared
                 optional: true
-              - kind: Secret
-                name: cluster-secrets
-                optional: true
+              # - kind: Secret
+              #   name: cluster-secrets
+              #   optional: true
               - kind: Secret
                 name: cluster-secrets-shared
                 optional: true

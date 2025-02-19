@@ -4,6 +4,6 @@ certManager:
 configMaps:
   - create: false
     name: cluster-settings
-secrets:
-  - create: false
-    name: cluster-secrets
+# secrets:
+#   - create: false
+#     name: cluster-secrets
