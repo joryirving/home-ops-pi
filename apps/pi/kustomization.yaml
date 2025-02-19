@@ -12,7 +12,7 @@ resources:
   - ../base/flux-system
   - ../base/flux-system/addons/ks.yaml
   - ../base/flux-system/flux-operator/ks.yaml
-  - ../base/flux-system/headlamp/ks.yaml
+  # - ../base/flux-system/headlamp/ks.yaml
   - ../base/flux-system/kustomize-mutating-webhook/ks.yaml
   - ../base/kube-system
   - ../base/kube-system/cilium/ks.yaml
