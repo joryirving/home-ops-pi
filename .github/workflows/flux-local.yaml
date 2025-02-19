@@ -21,6 +21,8 @@ jobs:
     strategy:
       matrix:
         cluster: ["pi", "test"]
+    outputs:
+      cluster: ${{ matrix.cluster }}
     steps:
       - name: Generate Token
         uses: actions/create-github-app-token@v1
@@ -44,9 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+    needs: ["test"]
     strategy:
       matrix:
-        cluster: ["pi", "test"]
+        cluster: ${{ needs.test.outputs.cluster }}
         resources: ["helmrelease", "kustomization"]
       max-parallel: 4
       fail-fast: false
@@ -106,7 +109,7 @@ jobs:
         uses: mshick/add-pr-comment@v2
         with:
           repo-token: ${{ steps.app-token.outputs.token }}
-          message-id: ${{ github.event.pull_request.number }}/${{ matrix.paths }}/${{ matrix.resources }}
+          message-id: ${{ github.event.pull_request.number }}/${{ matrix.cluster }}/${{ matrix.resources }}
           message-failure: Diff was not successful
           message: |
             ```diff

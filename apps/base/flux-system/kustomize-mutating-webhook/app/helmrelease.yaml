@@ -23,6 +23,9 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
+  values:
+    annotations:
+      configmap.reloader.stakater.com/reload: cluster-settings
   valuesFrom:
     - kind: ConfigMap
       name: kustomize-mutating-webhook-helm-values
