@@ -31,3 +31,15 @@ resources:
   - ../base/storage/local-path-provisioner/ks.yaml
   - ../base/storage/snapshot-controller/ks.yaml
   - ../base/storage/volsync/ks.yaml
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: network
+resources: []
+patches:
+  - path: cloudflared-values.yaml
+    target:
+      kind: HelmRelease
+      name: cloudflared
+      namespace: network
