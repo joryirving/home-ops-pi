@@ -11,21 +11,24 @@
   "ignorePaths": ["**/*.sops.*", "**/resources/**"],
   "flux": {
     "fileMatch": [
+      "(^|/)kubernetes/.+\\.ya?ml$",
       "(^|/)apps/.+\\.ya?ml$",
-      "(^|/)clusters/.+\\.ya?ml$"
+      "(^|/)cluster/.+\\.ya?ml$"
     ]
   },
   "helm-values": {
     "fileMatch": [
+      "(^|/)kubernetes/.+\\.ya?ml$",
       "(^|/)apps/.+\\.ya?ml$",
-      "(^|/)clusters/.+\\.ya?ml$"
+      "(^|/)cluster/.+\\.ya?ml$"
     ]
   },
   "kubernetes": {
     "fileMatch": [
       "(^|/)\\.taskfiles/.+\\.ya?ml$",
+      "(^|/)kubernetes/.+\\.ya?ml$",
       "(^|/)apps/.+\\.ya?ml$",
-      "(^|/)clusters/.+\\.ya?ml$"
+      "(^|/)cluster/.+\\.ya?ml$"
     ]
   }
 }
