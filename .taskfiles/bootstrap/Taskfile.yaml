@@ -23,7 +23,7 @@ tasks:
   gen-secrets:
     desc: Generate the Talos secrets
     cmds:
-      - talhelper -f {{.TALOS_DIR}}/talconfig.yaml gensecret > {{.TALOS_DIR}}/talsecret.sops.yaml
+      - talhelper gensecret > {{.TALOS_DIR}}/talsecret.sops.yaml
       - task: :sops:.encrypt-file
         vars:
           FILE: "{{.TALOS_DIR}}/talsecret.sops.yaml"

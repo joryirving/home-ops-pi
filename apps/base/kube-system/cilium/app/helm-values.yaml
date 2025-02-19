@@ -19,7 +19,7 @@ cluster:
   name: pi
 cni:
   exclusive: false
-devices: enp+
+devices: en+
 enableRuntimeDeviceDetection: true
 endpointRoutes:
   enabled: true
