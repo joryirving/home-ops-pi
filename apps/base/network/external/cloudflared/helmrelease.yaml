@@ -41,6 +41,7 @@ spec:
               TUNNEL_ORIGIN_ENABLE_HTTP2: true
               TUNNEL_TRANSPORT_PROTOCOL: quic
               TUNNEL_POST_QUANTUM: true
+            args: placeholder
             # args:
             #   - tunnel
             #   - --config
