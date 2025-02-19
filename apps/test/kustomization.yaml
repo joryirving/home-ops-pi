@@ -31,7 +31,3 @@ resources:
   - ../base/storage/local-path-provisioner/ks.yaml
   - ../base/storage/snapshot-controller/ks.yaml
   - ../base/storage/volsync/ks.yaml
-patches:
-  - path: ./cloudflared-values.yaml
-    target:
-      kind: HelmRelease
