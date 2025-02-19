@@ -11,5 +11,11 @@
       "matchFileNames": ["**/clusters/test/**"],
       "additionalBranchPrefix": "test-"
     }
+    ,
+    {
+      "description": "Separate PRs for test cluster",
+      "matchFileNames": ["**/apps/base/**"],
+      "additionalBranchPrefix": "shared-"
+    }
   ]
 }
