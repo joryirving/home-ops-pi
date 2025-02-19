@@ -21,8 +21,6 @@ jobs:
     strategy:
       matrix:
         cluster: ["pi", "test"]
-    outputs:
-      cluster: ${{ matrix.cluster }}
     steps:
       - name: Generate Token
         uses: actions/create-github-app-token@v1
@@ -46,10 +44,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    needs: ["test"]
     strategy:
       matrix:
-        cluster: ${{ needs.test.outputs.cluster }}
+        cluster: ["pi", "test"]
         resources: ["helmrelease", "kustomization"]
       max-parallel: 4
       fail-fast: false
