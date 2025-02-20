@@ -35,23 +35,23 @@ patches:
   - target:
       kind: Kustomization
       name: external-cloudflared
-      namespace: network
     patch: |-
       apiVersion: kustomize.toolkit.fluxcd.io/v1
       kind: Kustomization
       metadata:
-        name: not-used
+        name: external-cloudflared
+        namespace: network
       spec:
         patches:
           - target:
               kind: HelmRelease
               name: cloudflared
-              namespace: network
             patch: |-
               apiVersion: helm.toolkit.fluxcd.io/v2
               kind: HelmRelease
               metadata:
-                name: not-used
+                name: cloudflared
+                namespace: network
               spec:
                 values:
                   controllers:
