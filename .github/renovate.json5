@@ -13,14 +13,16 @@
     "fileMatch": [
       "(^|/)kubernetes/.+\\.ya?ml$",
       "(^|/)apps/.+\\.ya?ml$",
-      "(^|/)cluster/.+\\.ya?ml$"
+      "(^|/)cluster/.+\\.ya?ml$",
+      "(^|/)infrastructure/.+\\.ya?ml$"
     ]
   },
   "helm-values": {
     "fileMatch": [
       "(^|/)kubernetes/.+\\.ya?ml$",
       "(^|/)apps/.+\\.ya?ml$",
-      "(^|/)cluster/.+\\.ya?ml$"
+      "(^|/)cluster/.+\\.ya?ml$",
+      "(^|/)infrastructure/.+\\.ya?ml$"
     ]
   },
   "kubernetes": {
@@ -28,7 +30,8 @@
       "(^|/)\\.taskfiles/.+\\.ya?ml$",
       "(^|/)kubernetes/.+\\.ya?ml$",
       "(^|/)apps/.+\\.ya?ml$",
-      "(^|/)cluster/.+\\.ya?ml$"
+      "(^|/)cluster/.+\\.ya?ml$",
+      "(^|/)infrastructure/.+\\.ya?ml$"
     ]
   }
 }
