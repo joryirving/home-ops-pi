@@ -1,0 +1,10 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flux-system
+components:
+  - ../../../infrastructure/components/global-vars
+  - ../../../infrastructure/components/namespace
+  - ../../../infrastructure/components/sops
+resources: []

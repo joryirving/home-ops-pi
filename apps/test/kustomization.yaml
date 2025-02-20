@@ -3,64 +3,32 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  ## Namespaces
   - ../base/actions-runner-system
-  - ../base/actions-runner-system/actions-runner-controller
   - ../base/cert-manager
-  - ../base/cert-manager/cert-manager
   - ../base/default
   - ../base/external-secrets
-  - ../base/external-secrets/external-secrets
-  - ../base/external-secrets/onepassword
   - ../base/flux-system
-  - ../base/flux-system/addons
-  - ../base/flux-system/flux-operator
-  - ../base/flux-system/headlamp
-  - ../base/flux-system/kustomize-mutating-webhook
   - ../base/kube-system
-  - ../base/kube-system/cilium
-  - ../base/kube-system/coredns
-  - ../base/kube-system/metrics-server
   - ../base/kube-tools
-  - ../base/kube-tools/node-feature-discovery
-  - ../base/kube-tools/reloader
-  - ../base/kube-tools/system-upgrade-controller
   - ../base/network
-  - ../base/network/external
-  - ../base/network/internal
   - ../base/storage
-  - ../base/storage/local-path-provisioner
-  - ../base/storage/snapshot-controller
-  - ../base/storage/volsync
-patches:
-  - target:
-      kind: Kustomization
-      name: external-cloudflared
-    patch: |-
-      apiVersion: kustomize.toolkit.fluxcd.io/v1
-      kind: Kustomization
-      metadata:
-        name: external-cloudflared
-        namespace: network
-      spec:
-        patches:
-          - target:
-              kind: HelmRelease
-              name: cloudflared
-            patch: |-
-              apiVersion: helm.toolkit.fluxcd.io/v2
-              kind: HelmRelease
-              metadata:
-                name: cloudflared
-                namespace: network
-              spec:
-                values:
-                  controllers:
-                    cloudflared:
-                      containers:
-                        app:
-                          args:
-                            - tunnel
-                            - --config
-                            - /etc/cloudflared/config/config.yaml
-                            - run
-                            - 51921033-9888-483b-aa37-1572275acd11
+  ## Applications
+  - ./actions-runner-system/actions-runner-controller/ks.yaml
+  - ./cert-manager/cert-manager/ks.yaml
+  - ./external-secrets/external-secrets/ks.yaml
+  - ./external-secrets/onepassword/ks.yaml
+  - ./flux-system/addons/ks.yaml
+  - ./flux-system/flux-operator/ks.yaml
+  - ./flux-system/headlamp/ks.yaml
+  - ./flux-system/kustomize-mutating-webhook/ks.yaml
+  - ./kube-system/cilium/ks.yaml
+  - ./kube-system/coredns/ks.yaml
+  - ./kube-system/metrics-server/ks.yaml
+  - ./kube-tools/reloader/ks.yaml
+  - ./kube-tools/system-upgrade-controller/ks.yaml
+  - ./network/external/ks.yaml
+  - ./network/internal/ks.yaml
+  - ./storage/local-path-provisioner/ks.yaml
+  - ./storage/snapshot-controller/ks.yaml
+  - ./storage/volsync/ks.yaml
