@@ -8,3 +8,8 @@ components:
   - ../../../infrastructure/components/namespace
   - ../../../infrastructure/components/sops
 resources: []
+configMapGenerator:
+  - name: system-upgrade-plan-versions
+    env: ./.env
+generatorOptions:
+  disableNameSuffixHash: true
